@@ -22,16 +22,13 @@
 
 /* Header Styles */
 .header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: rgba(124, 133, 141, 0.85);
-  border-bottom: 2px solid rgba(6, 82, 141, 0.85);
-  box-shadow: 0 2px 5px rgba(6, 4, 4, 0.1);
-  z-index: 1000;
-  padding: 10px 20px;
-  font-size: 1.1rem;
+  display: flex; /* Use flexbox for horizontal layout */
+  justify-content: space-between; /* Space between nav links and button */
+  align-items: center; /* Vertically center the items */
+  padding: 10px 20px; /* Add some padding */
+  width: 100%; /* Full width */
+  background-color: #fff; /* Optional background color */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow */
 }
 
 .header-box {
@@ -42,49 +39,35 @@
   flex-wrap: nowrap;
 }
 
-.logo {
-    display: flex;
-    align-items: center;
-  }
-
-  .logo-img {
-    width: 50px; /* Adjust the width as needed */
-    height: auto; /* Keeps the image proportional */
-  }
-
 .nav {
   display: flex;
   align-items: center;
 }
 
 .nav-links {
-  display: flex;
-  list-style: none;
-  gap: 15px; /* Space between links */
-  flex-wrap: nowrap; /* Ensure links stay horizontal */
+  display: flex; /* Align nav links horizontally */
+  gap: 20px; /* Space between links */
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
-/* Navigation Links */
 .nav-links a {
   text-decoration: none;
-  color: #1c1c1c;
-  padding: 10px 15px;
-  font-weight: normal;
-  transition: color 0.3s ease;
+  color: #333;
+  font-size: 1rem;
 }
 
 .nav-links a:hover {
   color: rgb(193, 200, 208);
 }
-
 .cta {
-  background: rgb(5, 40, 102);
+  padding: 10px 20px;
+  background-color: #007BFF;
   color: white;
   border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
+  font-size: 1rem;
   cursor: pointer;
-  transition: background 0.3s ease;
 }
 
 .cta:hover {
@@ -585,46 +568,40 @@
       }
     }
 
-/*1 sectionn*/
-@media (max-width: 480px) {
-  .logo {
-    font-size: 24px; /* Reduces logo size */
+/* Responsive Styling for Mobile Screens */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: row; /* Ensure horizontal layout */
+    justify-content: space-between; /* Space between links and button */
+    padding: 10px 15px; /* Adjust padding */
   }
 
-  .nav-links a {
-    font-size: 14px; /* Reduces font size of links */
+  .nav-links {
+    display: flex; /* Align nav links horizontally */
+    gap: 15px; /* Smaller gap between links */
   }
 
   .cta {
-    font-size: 14px; /* Reduces button font size */
-    padding: 8px 12px;
+    font-size: 14px; /* Adjust button size */
+    padding: 8px 15px;
   }
 }
-@media (min-width: 769px) {
-  .hero {
-    flex-direction: row; /* Keep horizontal layout for larger screens */
-  }
 
-  .hero-text {
-    max-width: 50%;
-  }
-
-  .service-card {
-    width: 45%; /* Two columns on tablet and above */
-  }
-
+/* For Very Small Screens (max-width: 480px) */
+@media (max-width: 480px) {
   .header {
-    font-size: 1.2rem; /* Increase font size for larger screens */
-  }
-}
-
-@media (min-width: 1024px) {
-  .hero-text h1 {
-    font-size: 2rem;
+    flex-direction: row; /* Keep items in row */
+    justify-content: space-between; /* Space out items */
+    padding: 10px 12px; /* Adjust padding */
   }
 
-  .service-card {
-    width: 30%; /* Three columns on larger screens */
+  .nav-links {
+    gap: 10px; /* Reduce gap between links */
+  }
+
+  .cta {
+    font-size: 12px; /* Very small button for mobile */
+    padding: 6px 12px; /* Adjust button padding */
   }
 }
 
@@ -633,21 +610,18 @@
 <body>
   <!-- Header -->
   <header class="header">
-    <div class="header-box">
-      <div class="logo">
-        <img src="IC.png" alt="Brand Logo" class="logo-img">
-      </div>
-      <nav class="nav">
-        <ul class="nav-links">
-            <li><a href="header.html">Home</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="catalogue.html">Catalogue</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-      <button class="cta" id="scheduleMeetingBtn">Schedule a Meeting</button>
-    </div>
-  </header>
+  <div class="header-box">
+    <nav class="nav">
+      <ul class="nav-links">
+        <li><a href="header.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="catalogue.html">Catalogue</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="cta" id="scheduleMeetingBtn">Schedule a Meeting</button>
+  </div>
+</header>
 
   <!-- First Section -->
   <section class="hero">
